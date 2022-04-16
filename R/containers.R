@@ -1,6 +1,6 @@
 #' List all containers in an account
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/list}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/list}
 #' @family container functions
 #' 
 #' @param account_id Account Id
@@ -32,7 +32,7 @@ gtm_containers_list <- function(account_id) {
 
 #' Gets the metadata for a single container in GTM
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/get}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/get}
 #' @family container functions
 #' 
 #' @param account_id Account Id
@@ -66,12 +66,12 @@ gtm_containers_get <- function(account_id, container_id) {
 
 #' Creates a new container in an acount
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/create}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/create}
 #' @family container functions
 #' 
 #' @param account_id Account Id
 #' @param name Container Name
-#' @param type Container Use Type
+#' @param type Container Use Type, one of web, iosSdk5, androidSdk5, amp or server
 #' @param domain_name List of domain names associated with the Container.
 #' @param notes Container Notes.
 #'
@@ -91,7 +91,7 @@ gtm_containers_get <- function(account_id, container_id) {
 #' @export
 gtm_containers_create <- function(account_id, 
                                   name, 
-                                  type = c('web', 'iosSdk5', 'androidSdk5', 'amp'), 
+                                  type = c("web", "iosSdk5", "androidSdk5", "amp", "server"), 
                                   domain_name = NULL, 
                                   notes = NULL) {
     if (any(missing(account_id),
@@ -125,13 +125,13 @@ gtm_containers_create <- function(account_id,
 
 #' Updates a GTM Container
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/update}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/update}
 #' @family container functions
 #' 
 #' @param account_id Account Id
 #' @param container_id Container Id
 #' @param name Container Name
-#' @param type Container Use Type
+#' @param type Container Use Type, one of web, iosSdk5, androidSdk5, amp or server
 #' @param domain_name List of domain names associated with the Container.
 #' @param notes Container Notes.
 #'
@@ -153,7 +153,7 @@ gtm_containers_create <- function(account_id,
 gtm_containers_update <-function(account_id,
                                  container_id,
                                  name,
-                                 type = c("amp", "androidSdk5", "iosSdk5", "web"),
+                                 type = c("amp", "androidSdk5", "iosSdk5", "web", "server"),
                                  domain_name = "",
                                  notes = "") {
     if (missing(type)) {
@@ -187,7 +187,7 @@ gtm_containers_update <-function(account_id,
 
 #' Deletes an existing GTM Container.
 #' 
-#' @seealso \url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/delete}
+#' @seealso \url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/delete}
 #' @family container functions
 #' @importFrom utils menu
 #' 

@@ -7,7 +7,7 @@
 gtm_containers_create(
   account_id,
   name,
-  type = c("web", "iosSdk5", "androidSdk5", "amp"),
+  type = c("web", "iosSdk5", "androidSdk5", "amp", "server"),
   domain_name = NULL,
   notes = NULL
 )
@@ -17,7 +17,7 @@ gtm_containers_create(
 
 \item{name}{Container Name}
 
-\item{type}{Container Use Type}
+\item{type}{Container Use Type, one of web, iosSdk5, androidSdk5, amp or server}
 
 \item{domain_name}{List of domain names associated with the Container.}
 
@@ -37,7 +37,7 @@ container <- gtm_containers_create(accountId, newName, 'web')
 
 }
 \seealso{
-\url{https://developers.google.com/tag-manager/api/v2/reference/accounts/containers/create}
+\url{https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/create}
 
 Other container functions: 
 \code{\link{gtm_containers_delete}()},
